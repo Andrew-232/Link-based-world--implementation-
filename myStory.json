@@ -1,0 +1,137 @@
+{
+    "Title": "Dream?",
+    "Credits": "Created by Andrew Hernandez (ahern232@ucsc.edu).",
+    "InitialLocation": "Room",
+    "Locations": {
+        "Room": {
+            "Body": "You wake up in your bedroom.",
+            "Choices": [
+                {
+                    "Text": "Get up",
+                    "Target": "Up"
+                },
+                {
+                    "Text": "Go back to sleep",
+                    "Target": "Room"
+                }
+            ]
+        },
+        "Up": {
+            "Body": "You decided to get up.",
+            "Choices": [
+                {
+                    "Text": "Get ready",
+                    "Target": "Ready"
+                },
+                {
+                    "Text": "Lay back down and go back to sleep",
+                    "Target": "Room"
+                }
+            ]
+        },
+        "Ready": {
+            "Body": "You decided to get ready for the day.",
+            "Choices": [
+                {
+                    "Text": "Look for your car keys.",
+                    "Target": "keys"
+                },
+                {
+                    "Text": "Leave and begin your day",
+                    "Target": "Day"
+                },
+                {
+                    "Text": "Go back to your bed and sleep",
+                    "Target": "Room"
+                }
+            ]
+        },
+        "keys": {
+            "Body": "You go looking for your car keys.",
+            "Choices": [
+                {
+                    "Text": "Go check your bedroom",
+                    "Target": "CheckRoom"
+                },
+                {
+                    "Text": "Go check the living room",
+                    "Target": "CheckLivingRoom"
+                },
+                {
+                    "Text": "Give up and go back to your bed and sleep",
+                    "Target": "Room"
+                }
+            ]
+        },
+        "CheckRoom": {
+            "Body": "You go to your bedroom to check for your keys.",
+            "Choices": [
+                {
+                    "Text": "Go back to your bed and sleep",
+                    "Target": "Room"
+                },
+                {
+                    "Text": "Go check the living room",
+                    "Target": "CheckLivingRoom"
+                },
+                {
+                    "Text": "Leave and begin your day",
+                    "Target": "Day"
+                }
+            ]
+        },
+        "CheckLivingRoom": {
+            "Body": "You go to the living room to check for your keys.",
+            "Mechanism": "moveClothes",
+            "Choices": [
+                {
+                    "Text": "Go back to your bed and sleep",
+                    "Target": "Room"
+                },
+                {
+                    "Text": "Go check your bedroom",
+                    "Target": "CheckRoom"
+                },
+                {
+                    "Text": "Leave and begin your day",
+                    "Target": "Day"
+                }
+            ]
+        },
+        "foundKeys": {
+            "Body": "You found your keys!",
+            "Choices": [
+                {
+                    "Text": "Leave and begin your day",
+                    "Target": "Day",
+                    "Gives": "CarKeys"
+                },
+                {
+                    "Text": "Go back to your bed and sleep",
+                    "Target": "Room"
+                }
+            ]
+        },
+        "Day": {
+            "Body": "You've left and have begun your day.",
+            "Choices": [
+                {
+                    "Text": "Go back inside and go back to sleep",
+                    "Target": "Room"
+                },
+                {
+                    "Text": "Go back inside and look for your keys",
+                    "Target": "keys"
+                },
+                {
+                    "Text": "Walk to your car",
+                    "Target": "Car",
+                    "Requires": "CarKeys"
+                }
+            ]
+        },
+        "Car": {
+            "Body": "You walk to your car and get hit by another car. You then..."
+        }
+    }
+}
